@@ -1,0 +1,994 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111215;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222222;
+    z-index: 1000;
+    transition: opacity 1s ease;
+}
+
+#loading-screen.expanding {
+    animation: expandFromCenter 1s ease forwards;
+}
+
+.circle {
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#circle1 {
+    animation: moveLeft 3s ease forwards;
+    background-color: #c0a8e6;
+}
+
+#circle2 {
+    animation: moveRight 3s ease forwards;
+    background-color: #f8f2a0;
+}
+
+#loading-text {
+    position: absolute;
+    font-size: 3rem;
+    color: whitesmoke;
+    display: flex;
+}
+
+.letter {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: dropDown 1.2s ease forwards;
+}
+
+.letter:nth-child(1) { animation-delay: 0.2s; }
+.letter:nth-child(2) { animation-delay: 0.4s; }
+.letter:nth-child(3) { animation-delay: 0.6s; }
+.letter:nth-child(4) { animation-delay: 0.8s; }
+.letter:nth-child(5) { animation-delay: 1s; }
+.letter:nth-child(6) { animation-delay: 1.2s; }
+.letter:nth-child(7) { animation-delay: 1.4s; }
+.letter:nth-child(8) { animation-delay: 1.6s; }
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0) translateY(-50%);
+    }
+    100% {
+        transform: translateX(-550px) translateY(-75%);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0) translateY(-50%);
+    }
+    100% {
+        transform: translateX(550px) translateY(-25%);
+    }
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* @keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+} */
+ 
+/* @keyframes zoomOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+} */
+
+
+@keyframes expandFromCenter {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+#main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height:50px;
+    background-color: transparent;
+    color: whitesmoke;
+    padding: 10px 20px;
+    position: fixed;
+    top: 5px;
+    left:5px;
+    z-index: 1000;
+    font-family: 'Garamond';
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;    
+}
+
+#main-header.light {
+    color: black;
+}
+
+#main-header h1 {
+    margin: 0;
+    margin-left:10px;
+    font-size: 20px;
+}
+
+#main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#main-header nav ul li {
+    margin-right: 120px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#main-header nav ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#main-header.light nav ul li a {
+    color: inherit;
+}
+
+#background-section {
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+    height: 700px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    transition: background-image 2s ease-in-out;
+}
+
+.background-content {
+    padding: 20px;
+    margin-left:100px;
+    max-width: 650px;
+}
+
+.background-content h1{
+    font-size: 76px;
+    font-family: 'Merriweather', serif;
+    margin:0px;
+}
+
+.background-content p{
+    font-size:22px;
+    font-family: 'Merriweather', serif;
+    margin:0px;
+    margin-left:0px;
+    line-height: 34px;
+}
+
+/* Profile Section */
+#profile-section {
+    position: relative; /* Ensure this is relative so the child element can be positioned absolutely */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 0 0 0;
+    color: white;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-frame {
+    position: relative; /* Needed for absolute positioning of the pseudo-elements */
+    width: 230px; /* Should match the width of the image */
+    height: 330px; /* Should match the height of the image */
+}
+
+.profile-image-rectangle {
+    width: 100%; /* Matches the parent container's width */
+    height: 100%; /* Matches the parent container's height */
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Ensures the image stays above the frame */
+    margin-left:2.2px;
+    margin-top:18px;
+    transition: transform 0.5s ease;
+}
+
+.profile-image-rectangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image maintains its aspect ratio while covering the container */
+    display: block;
+    border-radius: 0; /* No curved corners, keeping the rectangle shape */
+}
+
+.profile-image-rectangle:hover {
+    transform: scaleX(1.13) scaleY(1.09);
+}
+
+/* Adding the frame effect */
+.profile-frame::before,
+.profile-frame::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #ffffff; /* Adjust the frame color and thickness */
+    box-sizing: border-box; 
+}
+
+.profile-frame::before {
+    width: 235px; /* Matches the frame width */
+    height: 335px; /* Matches the frame height */
+    top: 15px; /* Aligns with the top of the image */
+    left: 0px; /* Aligns with the left of the image */
+}
+
+.profile-frame::after {
+    width: 265px; /* Slightly larger than the image container for the outer border effect */
+    height: 365px; /* Slightly larger than the image container for the outer border effect */
+    top: 0px; /* Adjust positioning for effect */
+    left: -15px; /* Adjust positioning for effect */
+}
+
+.profile-text {
+    max-width: 450px;
+    margin-left: 65px;
+    margin-top: 45px;
+    line-height: 31px;
+}
+
+.profile-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    border: 2px solid white; /* Border thickness and color */
+    color: whitesmoke;
+    padding: 10px 160px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent; /* Make the background transparent */
+    position: relative; /* Position relative for pseudo-elements */
+    transition: color 0.3s ease;
+    outline: none; /* Remove default focus outline */
+    text-align: center; /* Center text */
+    display: inline-block; /* Fit content size */
+}
+
+.contact-button::before,
+.contact-button::after {
+    content: "";
+    position: absolute;
+    border: 2px solid white; /* Same border color for consistency */
+    transition: all 0.3s ease;
+}
+
+.contact-button::before {
+    top: -4px; /* Position above the button */
+    left: -4px; /* Position left of the button */
+    right: -4px; /* Position right of the button */
+    bottom: -4px; /* Position below the button */
+    border-radius: 7px; /* Slightly larger radius for outer border */
+}
+
+.contact-button::after {
+    top: 4px; /* Position inside the button */
+    left: 4px; /* Position inside the button */
+    right: 4px; /* Position inside the button */
+    bottom: 4px; /* Position inside the button */
+    border-radius: 5px; /* Radius matches button for inner border */
+}
+
+.contact-button:hover {
+    color: white;
+    background-color: rgb(255, 110, 110); /* Dark background on hover */
+}
+
+.contact-button:active {
+    color: white;
+    background-color: #333; /* Darker background on active */
+}
+
+.sticky-image {
+    position: absolute; /* Absolute positioning */
+    bottom: -30px; /* Distance from the bottom */
+    left:15px;
+    opacity:0.5;
+}
+
+.sticky-image img {
+    width: 220px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.sticky-image:hover {
+    animation: shake 2s ease; /* Trigger shake animation */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Chatbot toggle button styling */
+.chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #4CAF50; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chatbot section fixed at the bottom right */
+.chatbot-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px; /* Adjust width as needed */
+    max-height: 400px; /* Set a fixed height for the chat window */
+    z-index: 1000; /* Ensure the chatbot is on top of other elements */
+    background-color: #fff; /* Background color for the chat widget */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    overflow: hidden; /* Ensures content doesn't overflow */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hidden chatbot state */
+.chatbot-hidden {
+    display: none;
+}
+
+/* Chat output styling */
+.chat-output {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f9f9f9; /* Background color for chat messages */
+}
+
+/* User input styling */
+.chat-input {
+    width: calc(100% - 80px); /* Adjust width based on button size */
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc; /* Border to separate input from messages */
+}
+
+/* Send button styling */
+.chat-button {
+    width: 60px; /* Button width */
+    padding: 10px;
+    background-color: #4CAF50; /* Button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Close button styling */
+.close-chatbot {
+    align-self: flex-end;
+    margin: 5px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Style user and bot messages differently */
+.user-message {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.bot-message {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+#about-us-section {
+    position: relative;
+    padding: 100px 0 0 0;
+    height: 1600vh;
+}
+
+.about-title{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-size:40px;
+    margin-bottom:0px;
+    text-align: center;
+    margin-top:100px;
+}
+
+.card-stack-container {
+    position: sticky;
+    top: 0; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the bottom */
+}
+
+.card {
+    position: absolute;
+    width: 75%;
+    height: 80%;
+    padding: 20px;
+    background-color: white;
+    border: 3px solid whitesmoke;
+    border-radius: 15px;
+    transition: opacity 1.5s ease, transform 0s ease, box-shadow 0.6s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    z-index: 1;
+    color:white;
+}
+
+.card1-Title h1{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size:50px;
+}
+
+.card1-Title p {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    max-width: 550px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 34px;
+    margin-bottom:80px;
+}
+
+.scroll-down-image {
+    width: 130px;
+    height: auto;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: brightness(0) invert(1);
+}
+
+.card:hover {
+    box-shadow: 0px 15px 100px rgba(234,115,141, 0.5);
+}
+
+.card-icon {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size:50px;
+    width: 30px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    z-index: 100; /* Ensure the icons are above other elements */
+    color:white;
+}
+
+.left-icon {
+    left: 40px; /* Adjust distance from the left edge */
+}
+
+.right-icon {
+    right: 60px; /* Adjust distance from the right edge */
+}
+
+/* Initially show the first card */
+.card-1 {
+    z-index: 5;
+    opacity: 1;
+    transform: translateY(0);
+    background-color: #111215;
+}
+
+.card-2{
+    background-color: #111215;
+}
+
+.card-3{
+    background-color: #111215;
+}
+
+.card-4{
+    background-color: #111215;
+}
+
+.card-5{
+    background-color: #111215;
+}
+
+.card-6{
+    background-color: #111215;
+}
+
+/* Adjusted styling for the sticky effect */
+.card.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 10; /* Bring to the front */
+}
+
+.card.inactive {
+    opacity: 0;
+    transform: translateY(100px);
+    z-index: 0; /* Send to back */
+}
+
+
+
+/* Updated CSS for Top-Down Perspective Tablet Frame */
+.css-tablet-frame {
+    position: relative;
+    width: 470px; /* Width of the tablet */
+    height: 300px; /* Height of the tablet */
+    margin: 0 auto;
+    margin-left:600px;
+    background-color: #000000; /* Background color of the tablet frame */
+    border-radius: 20px; /* Rounded corners */
+    border:2px solid white;
+    padding: 20px; /* Padding to simulate bezel */
+    top:50px;
+    transform: perspective(1000px) rotateX(50deg) rotateZ(-40deg); /* Perspective and rotation to achieve top-down view */
+}
+
+.tablet-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Rounded corners for the screen */
+    object-fit: cover;
+    box-shadow: 
+        inset 2px 2px 4px rgba(0, 0, 0, 0.3), /* Inner shadow for screen depth */
+        inset -2px -2px 4px rgba(255, 255, 255, 0.2); /* Inner highlight for 3D screen */
+}
+
+.css-tablet-frame::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background-color: #666; /* Darker for better contrast */
+    border-radius: 2px; /* Smaller radius for a different notch shape */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Slightly subtler shadow */
+    z-index: 1; /* Ensures it's above the screen */
+}
+
+
+.card:hover .css-tablet-frame {
+    box-shadow: 0px 5px 30px rgba(234,115,141, 0.5);
+    transition: box-shadow 0.6s ease; /* Smooth transition */
+}
+
+.card .css-tablet-frame {
+    transition: box-shadow 0.6s ease; /* Smooth transition */
+}
+
+.card2-Title{
+    position:absolute;
+    max-width: 500px;
+    margin-left:25px;
+}
+
+.card2-Title h3{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card2-Title h2{
+    color:rgb(160, 160, 160);
+    font-size:30px;
+    margin: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card2-Title h1{
+    font-size:38px;
+    margin: 10px 0px;
+    max-width:440px;
+    font-family: 'Poppins', sans-serif;
+    color:#73EAD0;
+    background-color: rgba(234,115,141,0.85);
+}
+
+.card2-Title p{
+    font-family: 'Raleway', sans-serif;
+    font-size:20px;
+    line-height: 34px;
+}
+
+.card2-Title button{
+    color:white;
+    font-size:22px;
+    background-color: #111215;
+    padding:18px 70px;
+    border-radius:10px;
+    border:2px solid white;
+    cursor: pointer;
+}
+
+.card2-Title button:hover{
+    background-color: rgb(245, 245, 245);
+    color:black;
+}
+
+
+.monitor {
+    width: 500px;
+    height: 285px;
+    background-color: #000000;
+    border: 2px solid white;
+    border-radius: 15px;
+    position: relative;
+    margin: 0 auto;
+    margin-left:50px;
+    margin-top:140px;
+}
+
+.monitor-screen {
+    width: 480px;
+    height: 270px;
+    background-color: #111215;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.monitor-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.monitor-stand {
+    width: 60px;
+    height: 20px;
+    background-color: #000000;
+    margin: 0 auto;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+}
+
+.monitor-base {
+    width: 200px;
+    height: 12px;
+    background-color: #000000;
+    border-radius: 3px;
+    margin: 10px auto 0;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+}
+
+.monitor-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.monitor-content p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card:hover .monitor{
+    box-shadow: 0px 5px 30px rgba(234,115,141, 0.5);
+    transition: box-shadow 0.6s ease; /* Smooth transition */
+}
+
+.card .monitor {
+    transition: box-shadow 0.6s ease; /* Smooth transition */
+}
+
+.card3-Title{
+    position:absolute;
+    max-width: 500px;
+    margin-left:610px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    width: 100%;
+    margin-top:30px;
+}
+
+.card3-Title h3{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card3-Title h2{
+    color:rgb(160, 160, 160);
+    font-size:30px;
+    margin: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card3-Title h1{
+    font-size:38px;
+    margin: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+    color:#73EAD0;
+    background-color: rgba(234,115,141,0.85);
+}
+
+.card3-Title p{
+    font-family: 'Raleway', sans-serif;
+    font-size:20px;
+    line-height: 34px;
+    margin-bottom:40px;
+}
+
+.card3-Title button{
+    color:white;
+    font-size:22px;
+    background-color: #111215;
+    padding:18px 150px;
+    border-radius:10px;
+    border:2px solid white;
+    cursor: pointer;
+}
+
+.card3-Title button:hover{
+    background-color: rgb(245, 245, 245);
+    color:black;
+}
+
+
+/* Shop-like Frame */
+.shop-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 50px;
+    margin-right:80px;
+}
+
+.project-image {
+    width: 400px;
+    height: 400px;
+    object-fit: contain; 
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+
+.card4-Title{
+    position:absolute;
+    max-width: 500px;
+    margin-left:35px;
+}
+
+.card4-Title h3{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card4-Title h2{
+    color:rgb(160, 160, 160);
+    font-size:30px;
+    margin: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card4-Title h1{
+    font-size:38px;
+    margin: 10px 0px;
+    max-width:430px;
+    font-family: 'Poppins', sans-serif;
+    color:#73EAD0;
+    background-color: rgba(234,115,141,0.85);
+}
+
+.card4-Title p{
+    font-family: 'Raleway', sans-serif;
+    font-size:20px;
+    line-height: 40px;
+}
+
+.card4-Title button{
+    color:white;
+    font-size:22px;
+    background-color: #111215;
+    padding:18px 70px;
+    border-radius:10px;
+    border:2px solid white;
+    cursor: pointer;
+}
+
+.card4-Title button:hover{
+    background-color: rgb(245, 245, 245);
+    color:black;
+}
+
+
+/* Mobile Phone Design */
+.mobile-phone {
+    width: 300px;
+    height: 580px;
+    border: 2px solid white;
+    border-radius: 36px;
+    position: relative;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* transform: perspective(1000px) rotateX(70deg) rotateZ(-50deg) rotateY(-80deg); */
+    /* transform: perspective(1000px) rotateX(30deg) rotateZ(-30deg) rotateY(-20deg); */
+    /* Added thickness */
+    transform-style: preserve-3d;
+    margin-left:660px;
+    margin-top: -15px;
+}
+
+/* Back Layer of the Phone */
+.mobile-phone::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111111; /* Darker shade for the back layer */
+    border: 2px solid white;
+    border-radius: 36px;
+    right: 10px;
+    z-index: -1; /* Places it behind the phone */
+}
+
+/* Phone Screen */
+.phone-screen {
+    width: 270px;
+    height: 530px;
+    background: #ffffff;
+    position: absolute;
+    top: 25px;
+    right: 12px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Video inside the screen */
+.phone-video {
+    width: 540px;
+    height: 100%;
+    object-fit: cover;
+    /* transform: rotate(90deg);
+    position: absolute; */
+    /* top: 500%;
+    left: 500%; */
+    /* transform: translate(-50%, -50%) rotate(90deg); */
+}
+
+
+/* Front Camera */
+.phone-camera {
+    width: 15px;
+    height: 15px;
+    background: #000000;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 46%;
+    transform: translateX(-50%);
+}
+
+/* Bottom Button */
+.phone-button {
+    width: 60px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 7px;
+    right:125px;
+}
+
+.card:hover .mobile-phone {
+    box-shadow: 0px 5px 60px rgba(234,115,141, 0.5);
+    transition: box-shadow 0.6s ease; /* Smooth transition */
+}
+
+.card .mobile-phone {
+    transition: box-shadow 0.6s ease; /* Smooth transition */
+}
+
+/* font-family: 'Raleway', sans-serif;
+font-family: 'Poppins', sans-serif; */

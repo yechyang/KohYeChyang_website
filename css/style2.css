@@ -1,0 +1,246 @@
+#skills-section {
+    padding: 150px 20px;
+    background-color: #111; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff; /* White text */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background-color: #222; /* Slightly lighter background */
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    width: 200px;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.skill-card p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.skill-card:hover {
+    transform: translateY(-50px);
+    box-shadow: 0px 15px 100px rgba(234,115,141, 0.5);
+}
+
+.skill-icon {
+    display: block;
+    margin: 0px auto;
+    width: 60px; 
+    height: auto;
+}
+
+.skill-icon1 {
+    display: block;
+    margin: 10px auto;
+    width: 60px; 
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+#certifications-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #111215;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.certifications-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.certification-card {
+    background-color: #111215;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.certification-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.certification-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    font-weight:bolder;
+    color: white;
+}
+
+.certification-card p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin: 20px 0; /* Adjust spacing between certifications */
+}
+
+#get-in-touch-section {
+    background-color: #111215; /* Dark background */
+    color: white;
+    padding: 300px 0;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom:150px;
+}
+
+.get-in-touch-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.get-in-touch-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.get-in-touch-text h2 {
+    font-size: 36px;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 20px;
+}
+
+.get-in-touch-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.get-in-touch-form {
+    flex: 1;
+    background-color: #282828;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.get-in-touch-form input,
+.get-in-touch-form textarea {
+    width: 94%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.get-in-touch-form textarea{
+    resize: none;
+}
+
+.get-in-touch-form input::placeholder,
+.get-in-touch-form textarea::placeholder {
+    color: #888;
+}
+
+.get-in-touch-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-in-touch-form button:hover {
+    background-color: rgb(255, 0, 55);
+    color: #fff;
+}
+
+.back-button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 0;
+}
+
+.back-to-top-button {
+    border: 2px solid white;
+    color: whitesmoke;
+    padding: 15px 160px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    transition: color 0.3s ease;
+    outline: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.back-to-top-button::before,
+.back-to-top-button::after {
+    content: "";
+    position: absolute;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.back-to-top-button::before {
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 7px;
+}
+
+.back-to-top-button::after {
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 5px;
+}
+
+.back-to-top-button:hover {
+    color: white;
+    background-color: rgb(255, 110, 110);
+}
+
+.back-to-top-button:active {
+    color: white;
+    background-color: #333;
+}
