@@ -126,57 +126,6 @@ body, html {
     }
 }
 
-#main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height:50px;
-    background-color: transparent;
-    color: whitesmoke;
-    padding: 10px 20px;
-    position: fixed;
-    top: 5px;
-    left:5px;
-    z-index: 1000;
-    font-family: 'Garamond';
-    letter-spacing: 0.1em;
-    transition: color 0.3s ease;    
-}
-
-#main-header.light {
-    color: black;
-}
-
-#main-header h1 {
-    margin: 0;
-    margin-left:10px;
-    font-size: 20px;
-}
-
-#main-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-#main-header nav ul li {
-    margin-right: 120px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#main-header nav ul li a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-#main-header.light nav ul li a {
-    color: inherit;
-}
-
 #background-section {
     background-size: cover;
     background-position: center 65%;

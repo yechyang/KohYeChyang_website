@@ -1,0 +1,95 @@
+#get-in-touch-section {
+    background-color: #111215; /* Dark background */
+    color: white;
+    padding: 300px 0;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom:150px;
+}
+
+.get-in-touch-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.get-in-touch-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.get-in-touch-text h2 {
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 20px;
+}
+
+.get-in-touch-text p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+.get-in-touch-text a{
+    text-decoration: none;
+    color:rgb(255, 110, 110);
+    font-weight: bold;
+}
+
+.back-button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 0;
+}
+
+.back-to-top-button {
+    border: 2px solid white;
+    color: whitesmoke;
+    padding: 15px 160px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    transition: color 0.3s ease;
+    outline: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.back-to-top-button::before,
+.back-to-top-button::after {
+    content: "";
+    position: absolute;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.back-to-top-button::before {
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 7px;
+}
+
+.back-to-top-button::after {
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 5px;
+}
+
+.back-to-top-button:hover {
+    color: white;
+    background-color: rgb(255, 110, 110);
+}
+
+.back-to-top-button:active {
+    color: white;
+    background-color: #333;
+}
