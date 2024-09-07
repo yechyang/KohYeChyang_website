@@ -248,6 +248,14 @@ body, html {
     margin-bottom: 20px;
 }
 
+.linkedin-image{
+    position:absolute;
+    width:30px;
+    height:auto;
+    bottom:0px;
+    left:500px;
+}
+
 .contact-button {
     border: 2px solid white; /* Border thickness and color */
     color: whitesmoke;
