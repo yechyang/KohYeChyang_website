@@ -94,27 +94,6 @@ body, html {
     }
 }
 
-/* @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-} */
- 
-/* @keyframes zoomOut {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-} */
-
-
 @keyframes expandFromCenter {
     0% {
         opacity: 1;
@@ -162,7 +141,7 @@ body, html {
 
 /* Profile Section */
 #profile-section {
-    position: relative; /* Ensure this is relative so the child element can be positioned absolutely */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,17 +157,17 @@ body, html {
 }
 
 .profile-frame {
-    position: relative; /* Needed for absolute positioning of the pseudo-elements */
-    width: 230px; /* Should match the width of the image */
-    height: 330px; /* Should match the height of the image */
+    position: relative;
+    width: 230px;
+    height: 330px;
 }
 
 .profile-image-rectangle {
-    width: 100%; /* Matches the parent container's width */
-    height: 100%; /* Matches the parent container's height */
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
-    z-index: 1; /* Ensures the image stays above the frame */
+    z-index: 1;
     margin-left:2.2px;
     margin-top:18px;
     transition: transform 0.5s ease;
@@ -197,36 +176,35 @@ body, html {
 .profile-image-rectangle img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image maintains its aspect ratio while covering the container */
+    object-fit: cover;
     display: block;
-    border-radius: 0; /* No curved corners, keeping the rectangle shape */
+    border-radius: 0;
 }
 
 .profile-image-rectangle:hover {
     transform: scaleX(1.13) scaleY(1.09);
 }
 
-/* Adding the frame effect */
 .profile-frame::before,
 .profile-frame::after {
     content: '';
     position: absolute;
-    border: 2px solid #ffffff; /* Adjust the frame color and thickness */
+    border: 2px solid #ffffff;
     box-sizing: border-box; 
 }
 
 .profile-frame::before {
-    width: 235px; /* Matches the frame width */
-    height: 335px; /* Matches the frame height */
-    top: 15px; /* Aligns with the top of the image */
-    left: 0px; /* Aligns with the left of the image */
+    width: 235px;
+    height: 335px;
+    top: 15px;
+    left: 0px;
 }
 
 .profile-frame::after {
-    width: 265px; /* Slightly larger than the image container for the outer border effect */
-    height: 365px; /* Slightly larger than the image container for the outer border effect */
-    top: 0px; /* Adjust positioning for effect */
-    left: -15px; /* Adjust positioning for effect */
+    width: 265px;
+    height: 365px;
+    top: 0px;
+    left: -15px;
 }
 
 .profile-text {
@@ -257,85 +235,72 @@ body, html {
 }
 
 .contact-button {
-    border: 2px solid white; /* Border thickness and color */
+    border: 2px solid white;
     color: whitesmoke;
     padding: 10px 160px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
-    background-color: transparent; /* Make the background transparent */
-    position: relative; /* Position relative for pseudo-elements */
+    background-color: transparent;
+    position: relative;
     transition: color 0.3s ease;
-    outline: none; /* Remove default focus outline */
-    text-align: center; /* Center text */
-    display: inline-block; /* Fit content size */
+    outline: none;
+    text-align: center;
+    display: inline-block;
 }
 
 .contact-button::before,
 .contact-button::after {
     content: "";
     position: absolute;
-    border: 2px solid white; /* Same border color for consistency */
+    border: 2px solid white;
     transition: all 0.3s ease;
 }
 
 .contact-button::before {
-    top: -4px; /* Position above the button */
-    left: -4px; /* Position left of the button */
-    right: -4px; /* Position right of the button */
-    bottom: -4px; /* Position below the button */
-    border-radius: 7px; /* Slightly larger radius for outer border */
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 7px;
 }
 
 .contact-button::after {
-    top: 4px; /* Position inside the button */
-    left: 4px; /* Position inside the button */
-    right: 4px; /* Position inside the button */
-    bottom: 4px; /* Position inside the button */
-    border-radius: 5px; /* Radius matches button for inner border */
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 5px;
 }
 
 .contact-button:hover {
     color: white;
-    background-color: rgb(255, 110, 110); /* Dark background on hover */
+    background-color: rgb(255, 110, 110);
 }
 
 .contact-button:active {
     color: white;
-    background-color: #333; /* Darker background on active */
+    background-color: #333;
 }
 
 .sticky-image {
-    position: absolute; /* Absolute positioning */
-    bottom: -30px; /* Distance from the bottom */
+    position: absolute;
+    bottom: -30px;
     left:15px;
     opacity:0.5;
 }
 
 .sticky-image img {
-    width: 220px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 220px;
+    height: auto;
 }
 
-.sticky-image:hover {
-    animation: shake 2s ease; /* Trigger shake animation */
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-}
-
-/* Chatbot toggle button styling */
 .chatbot-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    background-color: #4CAF50; /* Button color */
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 50%;
@@ -346,56 +311,49 @@ body, html {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Chatbot section fixed at the bottom right */
 .chatbot-fixed {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 300px; /* Adjust width as needed */
-    max-height: 400px; /* Set a fixed height for the chat window */
-    z-index: 1000; /* Ensure the chatbot is on top of other elements */
-    background-color: #fff; /* Background color for the chat widget */
-    border: 1px solid #ccc; /* Optional border */
-    border-radius: 10px; /* Optional rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    overflow: hidden; /* Ensures content doesn't overflow */
+    width: 300px;
+    max-height: 400px;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease;
 }
 
-/* Hidden chatbot state */
 .chatbot-hidden {
     display: none;
 }
 
-/* Chat output styling */
 .chat-output {
     flex: 1;
     overflow-y: auto;
     padding: 10px;
-    background-color: #f9f9f9; /* Background color for chat messages */
+    background-color: #f9f9f9;
 }
 
-/* User input styling */
 .chat-input {
-    width: calc(100% - 80px); /* Adjust width based on button size */
+    width: calc(100% - 80px);
     padding: 10px;
     border: none;
-    border-top: 1px solid #ccc; /* Border to separate input from messages */
+    border-top: 1px solid #ccc;
 }
 
-/* Send button styling */
 .chat-button {
-    width: 60px; /* Button width */
+    width: 60px;
     padding: 10px;
-    background-color: #4CAF50; /* Button color */
-    color: white;
+    background-color: #4CAF50;
     border: none;
     cursor: pointer;
 }
 
-/* Close button styling */
 .close-chatbot {
     align-self: flex-end;
     margin: 5px;
@@ -405,7 +363,6 @@ body, html {
     cursor: pointer;
 }
 
-/* Style user and bot messages differently */
 .user-message {
     text-align: right;
     margin-bottom: 10px;
@@ -420,7 +377,7 @@ body, html {
 #about-us-section {
     position: relative;
     padding: 100px 0 0 0;
-    height: 1600vh;
+    height: 1800vh;
 }
 
 .about-title{
@@ -440,7 +397,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Align content to the bottom */
+    justify-content: flex-end;
 }
 
 .card {
@@ -451,7 +408,7 @@ body, html {
     background-color: white;
     border: 3px solid whitesmoke;
     border-radius: 15px;
-    transition: opacity 1.5s ease, transform 0s ease, box-shadow 0.6s ease;
+    transition: opacity 0.5s ease, transform 0s ease, box-shadow 0.6s ease;
     opacity: 0;
     transform: translateY(100px);
     z-index: 1;
@@ -497,22 +454,21 @@ body, html {
     top: 55%;
     transform: translateY(-50%);
     font-size:50px;
-    width: 30px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 30px;
+    height: auto;
     cursor: pointer;
-    z-index: 100; /* Ensure the icons are above other elements */
+    z-index: 100;
     color:white;
 }
 
 .left-icon {
-    left: 40px; /* Adjust distance from the left edge */
+    left: 40px;
 }
 
 .right-icon {
-    right: 60px; /* Adjust distance from the right edge */
+    right: 60px;
 }
 
-/* Initially show the first card */
 .card-1 {
     z-index: 5;
     opacity: 1;
@@ -540,44 +496,41 @@ body, html {
     background-color: #111215;
 }
 
-/* Adjusted styling for the sticky effect */
 .card.active {
     opacity: 1;
     transform: translateY(0);
-    z-index: 10; /* Bring to the front */
+    z-index: 10;
 }
 
 .card.inactive {
     opacity: 0;
     transform: translateY(100px);
-    z-index: 0; /* Send to back */
+    z-index: 0;
 }
 
 
-
-/* Updated CSS for Top-Down Perspective Tablet Frame */
 .css-tablet-frame {
     position: relative;
-    width: 470px; /* Width of the tablet */
-    height: 300px; /* Height of the tablet */
+    width: 470px;
+    height: 300px;
     margin: 0 auto;
     margin-left:600px;
-    background-color: #000000; /* Background color of the tablet frame */
-    border-radius: 20px; /* Rounded corners */
+    background-color: #000000;
+    border-radius: 20px;
     border:2px solid white;
-    padding: 20px; /* Padding to simulate bezel */
+    padding: 20px;
     top:50px;
-    transform: perspective(1000px) rotateX(50deg) rotateZ(-40deg); /* Perspective and rotation to achieve top-down view */
+    transform: perspective(1000px) rotateX(50deg) rotateZ(-40deg);
 }
 
 .tablet-video {
     width: 100%;
     height: 100%;
-    border-radius: 15px; /* Rounded corners for the screen */
+    border-radius: 15px;
     object-fit: cover;
     box-shadow: 
-        inset 2px 2px 4px rgba(0, 0, 0, 0.3), /* Inner shadow for screen depth */
-        inset -2px -2px 4px rgba(255, 255, 255, 0.2); /* Inner highlight for 3D screen */
+        inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+        inset -2px -2px 4px rgba(255, 255, 255, 0.2);
 }
 
 .css-tablet-frame::before {
@@ -588,20 +541,20 @@ body, html {
     transform: translateX(-50%);
     width: 60px;
     height: 5px;
-    background-color: #666; /* Darker for better contrast */
-    border-radius: 2px; /* Smaller radius for a different notch shape */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Slightly subtler shadow */
-    z-index: 1; /* Ensures it's above the screen */
+    background-color: #666;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 
 .card:hover .css-tablet-frame {
     box-shadow: 0px 5px 30px rgba(234,115,141, 0.5);
-    transition: box-shadow 0.6s ease; /* Smooth transition */
+    transition: box-shadow 0.6s ease;
 }
 
 .card .css-tablet-frame {
-    transition: box-shadow 0.6s ease; /* Smooth transition */
+    transition: box-shadow 0.6s ease;
 }
 
 .card2-Title{
@@ -721,11 +674,11 @@ body, html {
 
 .card:hover .monitor{
     box-shadow: 0px 5px 30px rgba(234,115,141, 0.5);
-    transition: box-shadow 0.6s ease; /* Smooth transition */
+    transition: box-shadow 0.6s ease;
 }
 
 .card .monitor {
-    transition: box-shadow 0.6s ease; /* Smooth transition */
+    transition: box-shadow 0.6s ease;
 }
 
 .card3-Title{
@@ -865,7 +818,6 @@ body, html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     /* transform: perspective(1000px) rotateX(70deg) rotateZ(-50deg) rotateY(-80deg); */
     /* transform: perspective(1000px) rotateX(30deg) rotateZ(-30deg) rotateY(-20deg); */
-    /* Added thickness */
     transform-style: preserve-3d;
     margin-left:660px;
     margin-top: -15px;
@@ -877,14 +829,13 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #111111; /* Darker shade for the back layer */
+    background: #111111;
     border: 2px solid white;
     border-radius: 36px;
     right: 10px;
-    z-index: -1; /* Places it behind the phone */
+    z-index: -1;
 }
 
-/* Phone Screen */
 .phone-screen {
     width: 270px;
     height: 530px;
@@ -901,7 +852,6 @@ body, html {
     position: relative;
 }
 
-/* Video inside the screen */
 .phone-video {
     width: 540px;
     height: 100%;
@@ -913,8 +863,6 @@ body, html {
     /* transform: translate(-50%, -50%) rotate(90deg); */
 }
 
-
-/* Front Camera */
 .phone-camera {
     width: 15px;
     height: 15px;
@@ -927,7 +875,6 @@ body, html {
     transform: translateX(-50%);
 }
 
-/* Bottom Button */
 .phone-button {
     width: 60px;
     height: 8px;
@@ -940,11 +887,11 @@ body, html {
 
 .card:hover .mobile-phone {
     box-shadow: 0px 5px 60px rgba(234,115,141, 0.5);
-    transition: box-shadow 0.6s ease; /* Smooth transition */
+    transition: box-shadow 0.6s ease;
 }
 
 .card .mobile-phone {
-    transition: box-shadow 0.6s ease; /* Smooth transition */
+    transition: box-shadow 0.6s ease;
 }
 
 /* font-family: 'Raleway', sans-serif;

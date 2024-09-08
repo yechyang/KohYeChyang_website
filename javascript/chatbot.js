@@ -1,3 +1,4 @@
+//Maybe to add
 document.getElementById('chatbot-toggle').addEventListener('click', () => {
     document.getElementById('chatbot-section').classList.toggle('chatbot-hidden');
     document.getElementById('chatbot-toggle').style.display = 'none';
