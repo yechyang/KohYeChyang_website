@@ -48,7 +48,7 @@ document.addEventListener('scroll', () => {
 
     const extendedHeight = viewportHeight * 3;
     const reducedScrollSpace = viewportHeight * 1.5;
-    const extraScrollSpace = viewportHeight * 1;
+    const extraScrollSpace = viewportHeight * 0.5;
 
     cards.forEach((card, index) => {
         let cardStart, cardEnd;
